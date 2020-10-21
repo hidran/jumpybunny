@@ -204,6 +204,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4742b19cddcb6498a985c99bde7dbc12, type: 3}
+--- !u!95 &393547062 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9560166, guid: 62359dbec881e4a0a8ba81638de6e92a, type: 3}
+  m_PrefabInstance: {fileID: 1674918525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,11 +357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5891808, guid: 62359dbec881e4a0a8ba81638de6e92a, type: 3}
       propertyPath: m_Offset.y
-      value: -0.4815458
+      value: -0.38998115
       objectReference: {fileID: 0}
     - target: {fileID: 5891808, guid: 62359dbec881e4a0a8ba81638de6e92a, type: 3}
       propertyPath: m_Radius
-      value: 0.6319641
+      value: 0.54039943
       objectReference: {fileID: 0}
     - target: {fileID: 5891808, guid: 62359dbec881e4a0a8ba81638de6e92a, type: 3}
       propertyPath: m_Offset.x
@@ -385,6 +390,7 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  animator: {fileID: 393547062}
 --- !u!58 &1776436159
 CircleCollider2D:
   m_ObjectHideFlags: 0
