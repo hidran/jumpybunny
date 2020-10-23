@@ -28,15 +28,25 @@ public class GameManager : MonoBehaviour
 {
     // Starts our game
     // DaysOfTheWeek currentDay = DaysOfTheWeek.Sunday;
-    GameState currentGameState = GameState.Menu;
+  public  GameState currentGameState = GameState.Menu;
+   private static GameManager sharedInstance;
 
+    private void Awake()
+    {
+        sharedInstance = this;
+    }
+     public static GameManager GetInstance()
+    {
+        return sharedInstance;
+    }
     public void StartGame()
     {
         ChangeGameState(GameState.InGame);
     }
     private void Start()
     {
-        StartGame();
+        //StartGame();
+        currentGameState = GameState.Menu;
     }
     // Called when player dies
     public void GameOver()
