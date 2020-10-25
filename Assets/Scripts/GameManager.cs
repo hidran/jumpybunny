@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
+        PlayerController.GetInstance().StartGame();
         ChangeGameState(GameState.InGame);
     }
     private void Start()
@@ -50,9 +51,10 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("s"))
+        if (currentGameState != GameState.InGame && Input.GetButtonDown("s"))
         {
             ChangeGameState(GameState.InGame);
+            StartGame();
         }
 
     }
