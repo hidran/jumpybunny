@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         transform.position = initialPosition;
         rigidBody.velocity = new Vector2(0,0);
         
+        
     }
     private void FixedUpdate()
     {
