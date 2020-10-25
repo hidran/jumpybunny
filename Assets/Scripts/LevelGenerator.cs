@@ -20,14 +20,23 @@ public class LevelGenerator : MonoBehaviour
         }
        
     }
+
+    public byte initialBlockNumber = 2;
     private void Awake()
     {
         _sharedInstance = this;
+        for( byte i = 0; i< initialBlockNumber; i++)
+        {
+            AddNewBlock();
+        }
+       
+       
+       
     }
 
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -39,10 +48,10 @@ public class LevelGenerator : MonoBehaviour
     public void AddNewBlock()
     {
         // 0 1 2 3 4
-        int randNumber = Random.Range(0, legoBlocks.Count - 1);
+        int randNumber = Random.Range(0, legoBlocks.Count );
         //var myBlock = new LevelBlock();
-      var  block =  Instantiate( legoBlocks[randNumber]);
-        block.transform.SetParent(this.transform);
+      var  block = Instantiate( legoBlocks[randNumber]);
+        block.transform.SetParent(this.transform, false);
         Vector3 blockPosition = Vector3.zero;
         if(currentBlocks.Count == 0)
         {
