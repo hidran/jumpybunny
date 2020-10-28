@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
+        LevelGenerator.sharedInstance.createInitialBlocks();
         PlayerController.GetInstance().StartGame();
         ChangeGameState(GameState.InGame);
     }
@@ -61,6 +62,8 @@ public class GameManager : MonoBehaviour
     // Called when player dies
     public void GameOver()
     {
+        LevelGenerator.sharedInstance.RemoveAllBlocks();
+        
         ChangeGameState(GameState.GameOver);
     }
     // Called when the player decides to quick the game

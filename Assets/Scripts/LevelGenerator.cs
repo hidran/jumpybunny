@@ -25,15 +25,23 @@ public class LevelGenerator : MonoBehaviour
     private void Awake()
     {
         _sharedInstance = this;
-        for( byte i = 0; i< initialBlockNumber; i++)
-        {
-            AddNewBlock();
-        }
-       
-       
-       
-    }
 
+
+        createInitialBlocks();
+
+
+    }
+    public void createInitialBlocks()
+    {
+        if(currentBlocks.Count> 0)
+        {
+            return;
+        }
+        for (byte i = 0; i < initialBlockNumber; i++)
+        {
+            AddNewBlock(true);
+        }
+    }
     void Start()
     {
        
@@ -45,10 +53,10 @@ public class LevelGenerator : MonoBehaviour
         
     }
 
-    public void AddNewBlock()
+    public void AddNewBlock(bool initialBlocks = false)
     {
         // 0 1 2 3 4
-        int randNumber = Random.Range(0, legoBlocks.Count );
+        int randNumber = initialBlocks? 0: Random.Range(0, legoBlocks.Count );
         //var myBlock = new LevelBlock();
       var  block = Instantiate( legoBlocks[randNumber]);
         block.transform.SetParent(this.transform, false);
@@ -69,5 +77,12 @@ public class LevelGenerator : MonoBehaviour
         var oldblock = currentBlocks[0];
         currentBlocks.Remove(oldblock);
         Destroy(oldblock.gameObject);
+    }
+    public void RemoveAllBlocks()
+    {
+        while (currentBlocks.Count> 0)
+        {
+            RemoveOldBlock();
+        }
     }
 }
