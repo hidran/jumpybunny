@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 /** 1) Menu
  *  2) InGame
  *  3) GameOver
@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
     // DaysOfTheWeek currentDay = DaysOfTheWeek.Sunday;
   public  GameState currentGameState = GameState.Menu;
    private static GameManager sharedInstance;
-
+    public Canvas mainMenu;
+    public Canvas gameMenu;
+    public Canvas gameOverMenu;
     private void Awake()
     {
         sharedInstance = this;
@@ -49,6 +51,9 @@ public class GameManager : MonoBehaviour
     {
         //StartGame();
         currentGameState = GameState.Menu;
+        mainMenu.enabled = true;
+        gameMenu.enabled = false;
+        gameOverMenu.enabled = false;
     }
     private void Update()
     {
@@ -74,30 +79,23 @@ public class GameManager : MonoBehaviour
     }
     void ChangeGameState(GameState newGameState)
     {
-       /* if(newGameState == GameState.Menu)
-        {
-            //Let's load Mainmenu Scene
-        } else if(newGameState == GameState.InGame)
-        {
-            // Unity Scene must show the Real game
-        } else if(newGameState == GameState.GameOver)
-        {
-            // Let's load end of the game scene
-        }
-         else{
-            currentGameState = GameState.Menu
-       }
-       */
+       
          switch(newGameState)
         {
             case GameState.Menu:
-                //Let's load Mainmenu Scene
+                mainMenu.enabled = true;
+                gameMenu.enabled = false;
+                gameOverMenu.enabled = false;
                 break;
             case GameState.InGame:
-                // Unity Scene must show the Real game
+                mainMenu.enabled = false;
+                gameMenu.enabled = true;
+                gameOverMenu.enabled = false;
                 break;
             case GameState.GameOver:
-                // Let's load end of the game scene
+                mainMenu.enabled = false;
+                gameMenu.enabled = false;
+                gameOverMenu.enabled = true;
                 break;
             default:
                 newGameState = GameState.Menu;

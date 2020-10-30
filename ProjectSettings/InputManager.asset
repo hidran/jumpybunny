@@ -6,7 +6,7 @@ InputManager:
   serializedVersion: 2
   m_Axes:
   - serializedVersion: 3
-    m_Name: S key
+    m_Name: s
     descriptiveName: key to start game
     descriptiveNegativeName: 
     negativeButton: 
