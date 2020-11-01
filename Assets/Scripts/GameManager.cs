@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public Canvas mainMenu;
     public Canvas gameMenu;
     public Canvas gameOverMenu;
+    int collectedCoins = 0;
     private void Awake()
     {
         sharedInstance = this;
@@ -103,5 +104,14 @@ public class GameManager : MonoBehaviour
         }
 
         currentGameState = newGameState;
+    }
+
+   public  void CollectCoins()
+    {
+        collectedCoins++;
+    }
+    public int GetCollectedCoins()
+    {
+        return collectedCoins;
     }
 }
