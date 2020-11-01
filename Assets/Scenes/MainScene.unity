@@ -1036,13 +1036,14 @@ GameObject:
   - component: {fileID: 795246379}
   - component: {fileID: 795246378}
   - component: {fileID: 795246377}
+  - component: {fileID: 795246380}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &795246376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1129,6 +1130,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &795246380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795246375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a3f9afd4b78694c8ee29f97bf7be28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsLabel: {fileID: 1211129691}
+  scoreText: {fileID: 934272592}
 --- !u!1 &850939213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1221599759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2753,11 +2768,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22423696, guid: 6253ae2dfd52c459a825a39575bb3087, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 396.3158
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22423696, guid: 6253ae2dfd52c459a825a39575bb3087, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 154.73685
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22423696, guid: 6253ae2dfd52c459a825a39575bb3087, type: 3}
       propertyPath: m_AnchorMin.y
@@ -2853,11 +2868,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22472228, guid: 6253ae2dfd52c459a825a39575bb3087, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 375.7895
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22472228, guid: 6253ae2dfd52c459a825a39575bb3087, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 39.473686
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22472228, guid: 6253ae2dfd52c459a825a39575bb3087, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2895,7 +2910,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 393547062}
-  runSpeed: 3
+  runSpeed: 7
 --- !u!58 &1776436159
 CircleCollider2D:
   m_ObjectHideFlags: 0

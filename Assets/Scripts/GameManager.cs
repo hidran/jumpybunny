@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         LevelGenerator.sharedInstance.createInitialBlocks();
         PlayerController.GetInstance().StartGame();
         ChangeGameState(GameState.InGame);
+        ViewInGame.GetInstance().ShowHighestScore();
     }
     private void Start()
     {
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
         LevelGenerator.sharedInstance.RemoveAllBlocks();
         
         ChangeGameState(GameState.GameOver);
+        GameOverView.GetInstance().UpdateGui();
     }
     // Called when the player decides to quick the game
     // and go to the main menu
@@ -117,9 +119,12 @@ public class GameManager : MonoBehaviour
    public  void CollectCoins()
     {
         collectedCoins++;
+        ViewInGame.GetInstance().UpdateCoins();
     }
     public int GetCollectedCoins()
     {
         return collectedCoins;
     }
+
+
 }
