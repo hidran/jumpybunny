@@ -26,17 +26,24 @@ public enum GameState
 }
 public class GameManager : MonoBehaviour
 {
-    // Starts our game
-    // DaysOfTheWeek currentDay = DaysOfTheWeek.Sunday;
+   
   public  GameState currentGameState = GameState.Menu;
+
    private static GameManager sharedInstance;
+
     public Canvas mainMenu;
+
     public Canvas gameMenu;
+
     public Canvas gameOverMenu;
+
     int collectedCoins = 0;
+
     private void Awake()
     {
         sharedInstance = this;
+        mainMenu.enabled = true;
+        currentGameState = GameState.Menu;
     }
      public static GameManager GetInstance()
     {
@@ -44,6 +51,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
+        print("start game");
         LevelGenerator.sharedInstance.createInitialBlocks();
         PlayerController.GetInstance().StartGame();
         ChangeGameState(GameState.InGame);
